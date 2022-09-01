@@ -1,7 +1,6 @@
 #!/bin/bash
 
 set -e
-touch /tmp/keepalive
 if [[ ! -z "$SKIP_DEBUGGER" ]]; then
   echo "Skipping debugger because SKIP_DEBUGGER enviroment variable is set"
   exit
