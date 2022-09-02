@@ -22,3 +22,16 @@ jobs:
 
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: mason105/proxy_mallory_action@master
+        with:
+          host: ${{ secrets.VAR_HOST }} 
+          port: 22
+          user: root
+          ssh_key: ${{ secrets.VAR_ID_RSA_P }} 
+          proxy_url: "google.com,bing.com"
+          
+          
+          
+          
+          
+          
+          
