@@ -30,8 +30,8 @@ jobs:
           proxy_url: "google.com,bing.com"
           
         
-      - name: Setup Debug Session
-        uses: csexton/debugger-action@master
+      - name: start mallory
+        run: mallory -config /tmp/m_config.json &
         
       - name: before proxy
         run: curl ipinfo.io/ip
