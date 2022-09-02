@@ -16,5 +16,9 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      - uses: actions/setup-go@v3
+        with:
+          go-version: '^1.13.1' # The Go version to download (if necessary) and use.
+
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: mason105/proxy_mallory_action@master
