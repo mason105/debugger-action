@@ -29,11 +29,18 @@ jobs:
           ssh_key: ${{ secrets.VAR_ID_RSA_P }} 
           proxy_url: "google.com,bing.com"
           
-      - name: run m
-        run:  mallory -config /tmp/m_config.json &
         
       - name: Setup Debug Session
         uses: csexton/debugger-action@master
+        
+      - name: before proxy
+        run: curl ipinfo.io/ip
+      - name: set proxy
+        run: export http_proxy=http://127.0.0.1:1316
+      - name: check proxy
+        run: env | grep http
+      - name: after proxy
+        run: curl ipinfo.io/ip
       
           
           
