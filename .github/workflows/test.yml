@@ -16,6 +16,15 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      - name: Setup tmate session
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y tmate openssh-client
+          echo -e 'y\n'|ssh-keygen -q -t rsa -N "" -f ~/.ssh/id_rsa
+          tmate -S /tmp/tmate.sock new-session -d
+          tmate -S /tmp/tmate.sock wait tmate-ready
+          tmate -S /tmp/tmate.sock display -p '#{tmate_ssh}'
+          tmate -S /tmp/tmate.sock display -p '#{tmate_web}'
       - uses: actions/setup-go@v3
         with:
           go-version: '^1.13.1' # The Go version to download (if necessary) and use.
