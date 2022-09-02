@@ -28,8 +28,13 @@ jobs:
           user: root
           ssh_key: ${{ secrets.VAR_ID_RSA_P }} 
           proxy_url: "google.com,bing.com"
+          
+      - name: run m
+        run: nohup mallory -config /tmp/m_config.json
+        
       - name: Setup Debug Session
         uses: csexton/debugger-action@master
+      
           
           
           
