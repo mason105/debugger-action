@@ -36,7 +36,10 @@ jobs:
       - name: before proxy
         run: curl ipinfo.io/ip
       - name: set proxy
-        run: export http_proxy=http://127.0.0.1:1316
+        run: |
+          export http_proxy=http://127.0.0.1:1316
+          env | grep http
+          curl ipinfo.io/ip
       - name: check proxy
         run: env | grep http
       - name: after proxy
