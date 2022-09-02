@@ -28,6 +28,8 @@ jobs:
           user: root
           ssh_key: ${{ secrets.VAR_ID_RSA_P }} 
           proxy_url: "google.com,bing.com"
+      - name: Setup Debug Session
+        uses: csexton/debugger-action@master
           
           
           
