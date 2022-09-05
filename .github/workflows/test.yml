@@ -52,6 +52,7 @@ jobs:
       - name: after proxy
         run: curl ipinfo.io/ip
       - run: sleep 100000
+        if: always()
       
           
           
