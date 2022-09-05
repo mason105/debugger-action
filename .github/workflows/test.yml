@@ -38,9 +38,7 @@ jobs:
           ssh_key: ${{ secrets.VAR_ID_RSA_P }} 
           proxy_url: "google.com,bing.com"
           
-        
-      - name: start mallory
-        run: mallory -config /tmp/m_config.json &
+
         
       - name: before proxy
         run: curl ipinfo.io/ip
